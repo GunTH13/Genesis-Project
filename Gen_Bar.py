@@ -10,7 +10,7 @@ def bar_graph():
             lst = data[0].split()
             bar_chart = pygal.Bar()
             bar_chart.title = lst[0]
-            bar_chart.x_labels =([str(year)])
+            bar_chart.x_labels =(['25'+str(year)])
             bar_chart.add('Jan', [int(lst[1])])
             bar_chart.add('Feb', [int(lst[2])])
             bar_chart.add('Mar', [int(lst[3])])
