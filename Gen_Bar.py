@@ -4,12 +4,13 @@ import csv
 
 def bar_graph():
     """Return bar graph as svg file."""
-    with open('50.txt') as bts:
+    year = int(input())
+    with open(str(year)+'.txt') as bts:
         for data in csv.reader(bts):
             lst = data[0].split()
             bar_chart = pygal.Bar()
             bar_chart.title = lst[0]
-            bar_chart.x_labels =(['25xx'])
+            bar_chart.x_labels =([str(year)])
             bar_chart.add('Jan', [int(lst[1])])
             bar_chart.add('Feb', [int(lst[2])])
             bar_chart.add('Mar', [int(lst[3])])
@@ -22,5 +23,5 @@ def bar_graph():
             bar_chart.add('Oct', [int(lst[10])])
             bar_chart.add('Nov', [int(lst[11])])
             bar_chart.add('Dec', [int(lst[12])])
-            bar_chart.render_to_file(lst[0]+"BarBTS.svg")
+            bar_chart.render_to_file(lst[0]+str(year)+".svg")
 bar_graph()
