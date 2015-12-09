@@ -4,7 +4,7 @@ import csv
 
 def bar_graph():
     """Return bar graph as svg file."""
-    with open('BTS20xx.txt') as bts:
+    with open('50.txt') as bts:
         for data in csv.reader(bts):
             lst = data[0].split()
             bar_chart = pygal.Bar()
