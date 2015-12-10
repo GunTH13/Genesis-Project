@@ -1,11 +1,11 @@
 """BTS bar graph <sum>"""
 import pygal
 import csv
-
+from pygal.style import DarkStyle
 def bar_graph_sum():
     """Return bar graph as svg file."""
     with open('summary.txt') as bts:
-        chart = pygal.Bar()
+        chart = pygal.Bar(fill=True, interpolate='cubic', style=DarkStyle)
         chart.title = "Summary between 2550-2558"
         chart.x_labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',\
         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']

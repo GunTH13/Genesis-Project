@@ -1,13 +1,13 @@
 """BTS line graph."""
 import pygal
 import csv
-
+from pygal.style import DarkStyle
 def bar_graph():
     """Return bar graph as svg file."""
     year = input()
     with open(year+'.txt') as bts:
         for data in csv.reader(bts):
-            lst = data[0].split()
+            lst = data[0].split(fill=True, interpolate='cubic', style=DarkStyle)
             chart = pygal.Line()
             chart.title = lst[0] + ' ' + year
             chart.x_labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',\
