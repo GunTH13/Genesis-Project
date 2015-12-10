@@ -1,13 +1,11 @@
 """Gen HTML for iframe"""
-def html_iframe(num, name):
+def html_iframe(year, name, num):
     for i in range(1, num+1):
-        if i < 10:
-            keep = "0"+str(i)
-        else:
-            keep = i
+        keep = "%02i"%i
+        print("---------------------------------")
         print('<div align="center">')
-        print('<iframe class="centre" src="http://gun.infiteam.in.th/Genesis/New%20Doc/2550/'+name+'/'+str(keep)+'.svg" scrolling="no" frameborder="no" height="600" width="700" align="centre" >')
+        print('<iframe class="centre" src="http://gun.infiteam.in.th/Genesis/New%20Doc/'+year+'\/'+name+'/'+str(keep)+'.svg" scrolling="no" frameborder="no" height="600" width="700" align="centre" >')
         print('</iframe></div>')
         print('<p> </p>')
-        print('')
-html_iframe(int(input()), input())
+        print('---------------------------------')
+html_iframe(input(), input(), int(input()))
