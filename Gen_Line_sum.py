@@ -3,9 +3,9 @@ import pygal
 import csv
 
 def line_graph_sum():
-    """Return bar graph as svg file."""
+    """Return line graph as svg file."""
     with open('summary.txt') as bts:
-        chart = pygal.Bar()
+        chart = pygal.Line()
         chart.title = "Summary between 2550-2558"
         chart.x_labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',\
         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
