@@ -7,8 +7,8 @@ def bar_graph():
     year = input()
     with open(year+'.txt') as bts:
         for data in csv.reader(bts):
-            lst = data[0].split(fill=True, interpolate='cubic', style=DarkStyle)
-            chart = pygal.Line()
+            lst = data[0].split()
+            chart = pygal.Line(fill=True, interpolate='cubic', style=DarkStyle)
             chart.title = lst[0] + ' ' + year
             chart.x_labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',\
             'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
